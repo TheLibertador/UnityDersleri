@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -12,7 +14,11 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody2D player;
 
+    [SerializeField] private Text coinText;
+    private int coin = 0;
+
     private bool onAir;
+    [SerializeField] private GameObject WinText;
     void Start()
     {
         player = gameObject.GetComponent<Rigidbody2D>();
@@ -63,6 +69,24 @@ public class CharacterController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             onAir = false;
+        }
+        else if (other.gameObject.CompareTag("Tuzaklar"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            coin++;
+            Destroy(other.gameObject);
+            coinText.text = coin.ToString();
+        }
+        else if (other.gameObject.CompareTag("LevelEnd"))
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }
