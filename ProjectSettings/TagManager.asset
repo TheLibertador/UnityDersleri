@@ -8,6 +8,8 @@ TagManager:
   - Tuzaklar
   - Coin
   - LevelEnd
+  - bullet
+  - patroller
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
