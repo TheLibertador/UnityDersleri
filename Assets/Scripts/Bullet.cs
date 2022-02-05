@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
         m_Rigidbody.velocity = transform.right * speed;
     }
 
-    private void OnCollisionEnter2D(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("patroller"))
         {

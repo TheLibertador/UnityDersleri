@@ -18,7 +18,7 @@ public class PatrollingEnemies : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("bullet"))
         {
