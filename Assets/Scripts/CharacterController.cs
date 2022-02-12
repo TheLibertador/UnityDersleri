@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Firebase;
+using Firebase.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,9 +21,15 @@ public class CharacterController : MonoBehaviour
 
     private bool onAir;
     [SerializeField] private GameObject WinText;
+
+    private int _sceneIndex;
+    private String _sceneName;
     void Start()
     {
         player = gameObject.GetComponent<Rigidbody2D>();
+        var activeScene = SceneManager.GetActiveScene();
+        _sceneIndex = activeScene.buildIndex;
+        _sceneName = activeScene.name;
     }
 
     
@@ -86,6 +94,9 @@ public class CharacterController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("LevelEnd"))
         {
+            FirebaseAnalytics.LogEvent("level_passed", new Parameter("Scene_Name", _sceneName),
+                new Parameter("Scene_Index", _sceneIndex));
+            FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelStart);
             SceneManager.LoadScene(1);
         }
     }

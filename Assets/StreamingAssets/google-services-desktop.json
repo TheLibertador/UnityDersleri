@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "853377164261",
+    "project_id": "unity-dersleri-9ad3c",
+    "storage_bucket": "unity-dersleri-9ad3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853377164261:android:138b75e8ff7eb2f1e7850c",
+        "android_client_info": {
+          "package_name": "com.SuperCatGames.PlatformGame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "853377164261-7t634kkgma90ue7n1d0o2afsg0dlh7g4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsYsYbcqwcVbyuSCrrsX38Q_U_dH7D7f4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853377164261-7t634kkgma90ue7n1d0o2afsg0dlh7g4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
